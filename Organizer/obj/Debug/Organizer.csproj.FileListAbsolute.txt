@@ -1,0 +1,6 @@
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\Debug\Organizer.exe.config
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\Debug\Organizer.exe
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\Debug\Organizer.pdb
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.csprojResolveAssemblyReference.cache
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.exe
+c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.pdb
