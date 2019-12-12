@@ -16,7 +16,7 @@ namespace Organizer
             {
                 Console.WriteLine("1 - Open Notepad");
                 Console.WriteLine("2 - Work with files");
-                Console.WriteLine("3 - Watching News from news.com");
+                Console.WriteLine("3 - Get current weather");
                 Console.WriteLine("4 - In developing...");
                 Console.WriteLine("5 - Exit...");
                 Console.WriteLine("Input number of operation:");
@@ -34,6 +34,8 @@ namespace Organizer
                         break;
                     case "3":
                         Console.WriteLine("API call");
+                        WeatherClass weather = new WeatherClass();
+                        weather.WeatherMenu();
                         break;
                     case "4":
                         Console.WriteLine("Here will be something amazing");

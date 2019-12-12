@@ -4,3 +4,5 @@ c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\De
 c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.csprojResolveAssemblyReference.cache
 c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.exe
 c:\users\nikita\documents\visual studio 2015\Projects\Organizer\Organizer\obj\Debug\Organizer.pdb
+C:\Users\Nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nikita\documents\visual studio 2015\Projects\Organizer\Organizer\bin\Debug\Newtonsoft.Json.xml
