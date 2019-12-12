@@ -17,7 +17,7 @@ namespace Organizer
                 Console.WriteLine("1 - Open Notepad");
                 Console.WriteLine("2 - Work with files");
                 Console.WriteLine("3 - Get current weather");
-                Console.WriteLine("4 - In developing...");
+                Console.WriteLine("4 - Send Email message");
                 Console.WriteLine("5 - Exit...");
                 Console.WriteLine("Input number of operation:");
                 numberOfOperation = Convert.ToString(Console.ReadLine());
@@ -33,12 +33,12 @@ namespace Organizer
                         files.FilesMenu();
                         break;
                     case "3":
-                        Console.WriteLine("API call");
                         WeatherClass weather = new WeatherClass();
                         weather.WeatherMenu();
                         break;
                     case "4":
-                        Console.WriteLine("Here will be something amazing");
+                        SendMail mail = new SendMail();
+                        mail.MailMenu();
                         break;
                     case "5":
                         Console.WriteLine("Exit...");

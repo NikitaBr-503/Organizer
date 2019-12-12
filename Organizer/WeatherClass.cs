@@ -11,8 +11,6 @@ namespace Organizer
 {
     class WeatherClass
     {
-
-
         public void WeatherMenu()
         {
             string city;
@@ -84,21 +82,16 @@ namespace Organizer
                 Console.WriteLine(e);
             }
         }
-
-
         public class Rootobject
         {
             public Weather[] weather { get; set; }
             public Main main { get; set; }
             public string name { get; set; }
         }
-
-
         public class Main
         {
             public float temp { get; set; }
         }
-
         public class Weather
         {
             public string description { get; set; }
