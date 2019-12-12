@@ -11,11 +11,11 @@ namespace Organizer
         static void Main(string[] args)
         {
             bool exit = true;
-            String numberOfOperation;
+            string numberOfOperation;
             while (exit)
             {
                 Console.WriteLine("1 - Open Notepad");
-                Console.WriteLine("2 - Using files");
+                Console.WriteLine("2 - Work with files");
                 Console.WriteLine("3 - Watching News from news.com");
                 Console.WriteLine("4 - In developing...");
                 Console.WriteLine("5 - Exit...");
@@ -25,12 +25,12 @@ namespace Organizer
                 switch (numberOfOperation)
                 {
                     case "1":
-                        Console.WriteLine("Windows app");
                         CallWindowsApp notepad = new CallWindowsApp();
                         notepad.OpenNotepadApp();
                         break;
                     case "2":
-                        Console.WriteLine("Read and write of file");
+                        WorkingWithFiles files = new WorkingWithFiles();
+                        files.FilesMenu();
                         break;
                     case "3":
                         Console.WriteLine("API call");

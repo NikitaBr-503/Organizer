@@ -15,17 +15,33 @@ namespace Organizer
             Process notepadProcess = Process.Start("notepad.exe");
             bool exit = true;
             while (exit) {
+
                 Console.WriteLine("1 - Close Notepad");
-                String i = Convert.ToString(Console.ReadLine());
-                if (i == "1"){
-                    notepadProcess.CloseMainWindow();
-                    exit = false;
-                }
-                else 
-                    Console.WriteLine("Invalid data, try again: ");
-                
+                Console.WriteLine("2 - Exit to main menu");
+                Console.WriteLine("Input number of operation:");
+                string i = Convert.ToString(Console.ReadLine());
+                switch (i)
+                {
+                    case "1":
+                        try {
+                            notepadProcess.CloseMainWindow();
+                            exit = false;
+                        }    
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                        break;
+                    case "2":
+                        exit = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid data, try again:");
+                        break;
+                }         
             }
         }
+       
 
         public void OpenNotepadApp(String message)
         {
