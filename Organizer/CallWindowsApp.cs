@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace Organizer
 {
-    class CallWindowsApp
+    class CallWindowsApp : IMenu
     {
-        
-        public void OpenNotepadApp()
+        public void Menu()
         {
             Process notepadProcess = Process.Start("notepad.exe");
             bool exit = true;
-            while (exit) {
-
-                Console.WriteLine("1 - Close Notepad");
-                Console.WriteLine("2 - Exit to main menu");
-                Console.WriteLine("Input number of operation:");
+            while (exit)
+            {
+                Output("1 - Close Notepad");
+                Output("2 - Exit to main menu");
+                Output("Input number of operation:");
                 string i = Convert.ToString(Console.ReadLine());
                 switch (i)
                 {
                     case "1":
-                        try {
+                        try
+                        {
                             notepadProcess.CloseMainWindow();
                             exit = false;
-                        }    
-                        catch(Exception e)
+                        }
+                        catch (Exception e)
                         {
                             Console.WriteLine(e);
                         }
@@ -36,16 +36,17 @@ namespace Organizer
                         exit = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid data, try again:");
+                        Output("Invalid data, try again:");
                         break;
-                }         
+                }
             }
         }
+
        
 
-        public void OpenNotepadApp(String message)
+        public void Output(string message)
         {
-            Process.Start("notepad.exe", message);
+            Console.WriteLine(message);
         }
     }
 }

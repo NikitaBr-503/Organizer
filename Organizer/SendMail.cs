@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace Organizer
 {
-    class SendMail
+    public class SendMail: IMenu
     {
-        public void MailMenu()
+
+        public void Menu()
         {
             string defaultEmailAddr = "t.testeracc1@gmail.com";
             string defaultPassword = "Test#Test1";
@@ -22,9 +23,9 @@ namespace Organizer
             bool exit = true;
             while (exit)
             {
-                Console.WriteLine("1 - Send email from default account");
-                Console.WriteLine("2 - Send email from own account");
-                Console.WriteLine("3 - Exit to main menu");
+                Output("1 - Send email from default account");
+                Output("2 - Send email from own account");
+                Output("3 - Exit to main menu");
                 string i = Console.ReadLine();
                 switch (i)
                 {
@@ -32,31 +33,35 @@ namespace Organizer
                         SendMessage(defaultEmailAddr, defaultPassword, defaultUserName);
                         break;
                     case "2":
-                        Console.WriteLine("Warning!Your account must have permission enabled for <<Untrusted Applications>>");
-                        Console.WriteLine("Input your gmail address: ");
+                        Output("Warning!Your account must have permission enabled for <<Untrusted Applications>>");
+                        Output("Input your gmail address: ");
                         ownEmailAddr = Console.ReadLine();
-                        Console.WriteLine("Input your Name: ");
+                        Output("Input your Name: ");
                         ownUserName = Console.ReadLine();
-                        Console.WriteLine("Input your password: ");
+                        Output("Input your password: ");
                         ownPasswd = Console.ReadLine();
+
                         SendMessage(ownEmailAddr, ownPasswd, ownUserName);
                         break;
                     case "3":
                         exit = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid data, try again..");
+                        Output("Invalid data, try again..");
                         break;
                 }
             }
         }
 
-
+        public void Output(string message)
+        {
+            Console.WriteLine(message);
+        }
 
         private void SendMessage(string emailAddr, string password, string userName)
         {
             string recipientEmail;
-            Console.WriteLine("Input recipient's gmail address: ");
+            Output("Input recipient's gmail address: ");
             recipientEmail = Console.ReadLine();
             
            try
@@ -67,9 +72,9 @@ namespace Organizer
                 using (MailMessage mailMessage = new MailMessage(fromMailAddress, toMailAddress))
                 using (SmtpClient smtpClient = new SmtpClient())
                 {
-                    Console.WriteLine("Input subject: ");
+                    Output("Input subject: ");
                     mailMessage.Subject = Console.ReadLine();
-                    Console.WriteLine("Input your message: ");
+                    Output("Input your message: ");
                     mailMessage.Body = Console.ReadLine();
 
                     smtpClient.Host = "smtp.gmail.com";

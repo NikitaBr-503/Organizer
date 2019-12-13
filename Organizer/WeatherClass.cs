@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace Organizer
 {
-    class WeatherClass
+    class WeatherClass : IMenu
     {
-        public void WeatherMenu()
+        public void Menu()
         {
             string city;
             bool exit = true;
             while (exit)
             {
-                Console.WriteLine("Choose a city:");
-                Console.WriteLine("1 - Kiev");
-                Console.WriteLine("2 - Lviv");
-                Console.WriteLine("3 - Kharkiv");
-                Console.WriteLine("4 - Chuhuiv");
-                Console.WriteLine("5 - Exit to Main Menu");
+                Output("Choose a city:");
+                Output("1 - Kiev");
+                Output("2 - Lviv");
+                Output("3 - Kharkiv");
+                Output("4 - Chuhuiv");
+                Output("5 - Exit to Main Menu");
                 string i = Console.ReadLine();
                 switch (i)
                 {
                     case "1":
                         city = "Kiev";
                         WeatherAPICall(city);
-                       break;
+                        break;
                     case "2":
                         city = "Lviv";
                         WeatherAPICall(city);
@@ -51,6 +51,11 @@ namespace Organizer
                 }
             }
         }
+
+        public void Output(string message)
+        {
+            Console.WriteLine(message);
+        }
         private void WeatherAPICall(string city)
         {
             string responseText;
@@ -61,7 +66,7 @@ namespace Organizer
                 HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
                 HttpWebResponse httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-
+   
                 using (StreamReader stream = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     responseText = stream.ReadToEnd();

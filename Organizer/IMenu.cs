@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Organizer
 {
-    class Program
+    interface IMenu
     {
-        static void Main(string[] args)
-        {
-            MainMenu menu = new MainMenu();
-            menu.Menu();
-        }
+        void Menu();
+       
+        void Output(string message);
     }
 }

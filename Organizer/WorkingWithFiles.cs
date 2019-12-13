@@ -7,20 +7,20 @@ using System.IO;
 
 namespace Organizer
 {
-    class WorkingWithFiles
+    class WorkingWithFiles : IMenu
     {
         private string path = @"D:\test.txt";
-        public void FilesMenu()
+        public void Menu()
         {
             bool exit = true;
             while (exit)
             {
-                Console.WriteLine("1 - Create file");
-                Console.WriteLine("2 - Open file for reading");
-                Console.WriteLine("3 - Open file for writing (If file doesn't exist, it will be created)");
-                Console.WriteLine("4 - Open file for rewriting");
-                Console.WriteLine("5 - Delete existing file");
-                Console.WriteLine("6 - Exit to Main Menu");
+                Output("1 - Create file");
+                Output("2 - Open file for reading");
+                Output("3 - Open file for writing (If file doesn't exist, it will be created)");
+                Output("4 - Open file for rewriting");
+                Output("5 - Delete existing file");
+                Output("6 - Exit to Main Menu");
                 string i = Console.ReadLine();
                 switch (i)
                 {
@@ -31,10 +31,10 @@ namespace Organizer
                         ReadingFile();
                         break;
                     case "3":
-                        OpenForWriting(InputContentForFile(), false);
+                        OpenForWriting(InputContentForFile(), true);
                         break;
                     case "4":
-                        OpenForWriting(InputContentForFile(), true);
+                        OpenForWriting(InputContentForFile(), false);
                         break;
                     case "5":
                         DeleteFile();
@@ -43,11 +43,12 @@ namespace Organizer
                         exit = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid data, try again..");
+                        Output("Invalid data, try again..");
                         break;
                 }
             }
         }
+
         private void CreateFile() {
             try {
                 FileStream createFile = new FileStream(path, FileMode.CreateNew);
@@ -80,7 +81,7 @@ namespace Organizer
                 {
                     writeToFile.WriteLine(text);
                 }
-                Console.WriteLine("Запись выполнена");
+                Output("Запись выполнена");
             }
             catch (Exception e)
             {
@@ -100,8 +101,15 @@ namespace Organizer
         }
         private string InputContentForFile()
         {
-            Console.WriteLine("Input your text: ");
+            Output("Input your text: ");
             return Console.ReadLine();
+        }
+
+       
+
+        public void Output(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
