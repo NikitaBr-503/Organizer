@@ -15,4 +15,4 @@ Organizer has next features:
      - Chuhuiv
   - Send email message
     - from default account (t.testeracc1@gmail.com) to anybody
-    - from own account (but account must have permission enabled for <<Untrusted Applications>>)
+    - from own account (but account must have permission enabled for "Untrusted Applications")
