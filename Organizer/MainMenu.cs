@@ -39,7 +39,7 @@ namespace Organizer
                         break;
                     case "4":
                         SendMail mail = new SendMail();
-                        mail.Menu();
+                        mail.StartSendMail();
                         break;
                     case "5":
                         Output("Exit...");
